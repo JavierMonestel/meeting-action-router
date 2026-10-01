@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <h1>From meeting to <span class="accent">owned, routed follow-ups</span> in one pass.</h1>
+  <p class="lead">Paste a transcript (from Grain, Zoom, or Meet). The router extracts decisions, open questions and every commitment, with an owner, a due date and the exact quote as evidence. Then it prepares each item for the right tool: <b>Linear</b> for product work, <b>Attio</b> for partner follow-ups, <b>Notion</b> for docs, and <b>Calendar</b> for meetings to book. You review it before anything is sent.</p>
+</section>
+
+<div class="grid-2-1">
+  <form class="card" method="post" action="/analyze">
+    <div class="card-head">
+      <h2>Transcript</h2>
+      <span class="badge {{ 'badge-green' if ai else 'badge-amber' }}">{{ 'Claude connected' if ai else 'Demo mode · rules engine' }}</span>
+    </div>
+    <div class="chips" role="tablist" aria-label="Sample meetings">
+      {% for slug, label in samples.items() %}
+        <a class="chip {{ 'chip-active' if slug == active_sample else '' }}" href="/?sample={{ slug }}">{{ label }}</a>
+      {% endfor %}
+    </div>
+    {% if error %}<div class="alert">{{ error }}</div>{% endif %}
+    <textarea name="transcript" rows="20" spellcheck="false" aria-label="Transcript">{{ transcript }}</textarea>
+    <div class="row-between">
+      <span class="muted small">Format: <code>[00:01:02] Name: text</code>, with optional Title / Date / Participants header lines.</span>
+      <button class="btn btn-primary" type="submit">Analyze meeting →</button>
+    </div>
+  </form>
+
+  <aside class="stack">
+    <div class="card">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><b>Parse</b> speakers, timestamps and who is external (role + organization).</li>
+        <li><b>Extract</b> commitments, decisions and open questions: Claude with a typed schema, or the rules engine as fallback.</li>
+        <li><b>Ground</b> every item in a verbatim quote and timestamp.</li>
+        <li><b>Route</b> to Linear, Attio, Notion or Calendar, and show the exact API request.</li>
+        <li><b>Review &amp; send</b>: a human approves, then items are created (or dry-run).</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h2>Connectors</h2>
+      <ul class="connectors">
+        {% for c in connectors %}
+          <li><span class="dest dest-{{ c.name }}">{{ c.label }}</span>
+            <span class="muted small">{{ 'live' if c.configured() else 'dry-run · set ' ~ (c.env_vars | join(', ')) }}</span></li>
+        {% endfor %}
+      </ul>
+      <p class="muted small">The hosted demo runs connectors in dry-run so no real workspace is touched. Every request is still built and shown in full.</p>
+    </div>
+  </aside>
+</div>
+{% endblock %}

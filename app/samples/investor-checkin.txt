@@ -1,0 +1,19 @@
+Title: Investor check-in – Harbor Lane Ventures
+Date: {{DATE}}
+Participants: Sam Rivera (Founder & CEO), Javier Monestel (Executive Assistant), Nora Lindqvist (Partner, Harbor Lane Ventures)
+
+[00:00:05] Nora Lindqvist: Good to see you, Sam. Give me the headline for the quarter.
+[00:00:12] Sam Rivera: Performance memberships passed three thousand paying athletes, and the clinical validation cohort is at seven hundred eighty patients.
+[00:00:40] Nora Lindqvist: Strong. What is the biggest risk on the clinical side?
+[00:00:51] Sam Rivera: Site approvals. One IRB amendment is holding up four hundred patients.
+[00:01:15] Nora Lindqvist: I know a sports cardiologist at a teaching hospital who has run exactly this kind of study. I'll intro you to Dr. Kim this week.
+[00:01:35] Sam Rivera: That would be very helpful, thank you.
+[00:01:42] Javier Monestel: I'll log the intro in Attio and schedule the call with Dr. Kim as soon as she replies.
+[00:02:10] Nora Lindqvist: For the seed extension, I would want to see October numbers before the partner meeting.
+[00:02:24] Sam Rivera: I'll send you the October metrics deck by the end of next week.
+[00:02:40] Nora Lindqvist: Include cohort retention for the athletes, please. That is what my partners will ask about.
+[00:02:55] Sam Rivera: Will do. Javier, can you pull the cohort retention chart into the deck template in Notion?
+[00:03:05] Javier Monestel: Yes, I'll add the retention chart to the Notion deck template by Tuesday.
+[00:03:30] Nora Lindqvist: One more thing: are you still thinking about a conference sponsorship in Q1?
+[00:03:44] Sam Rivera: Still undecided between the endurance expo and the cardiology summit.
+[00:03:58] Nora Lindqvist: Fine. Let's talk again after the deck.

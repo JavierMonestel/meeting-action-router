@@ -1,0 +1,18 @@
+Title: Performance growth standup
+Date: {{DATE}}
+Participants: Marcus Hale (Performance Lead), Dev Patel (CTO), Javier Monestel (Executive Assistant)
+
+[00:00:03] Marcus Hale: Quick one today. Trial-to-paid is flat at forty-one percent and churn ticked up after the strap issue.
+[00:00:25] Dev Patel: The workaround is live as of this morning, so alerts should be back for everyone.
+[00:00:40] Marcus Hale: Good. We should email the affected athletes and offer them a free month.
+[00:00:58] Dev Patel: I can pull the list of affected accounts from the database by tomorrow.
+[00:01:15] Marcus Hale: Perfect. Then I'll write the apology email and send it Friday.
+[00:01:40] Javier Monestel: Do we want this tracked anywhere?
+[00:01:46] Marcus Hale: Yes, put the free-month credit in Linear as a billing task for Dev.
+[00:02:00] Javier Monestel: Will do.
+[00:02:20] Marcus Hale: Second topic, the waitlist. Forty thousand people and we only invite two hundred a day.
+[00:02:41] Dev Patel: We can raise it to five hundred a day now that onboarding is stable. We decided last sprint to wait for the fix, so I'm fine to bump it.
+[00:03:02] Marcus Hale: Let's go with five hundred a day starting Monday.
+[00:03:15] Dev Patel: Dev will update the invite job, that's me, I'll do it Monday morning.
+[00:03:30] Javier Monestel: I'll add the new invite rate to the growth dashboard page in Notion.
+[00:03:50] Marcus Hale: Great, that's it.

@@ -1,0 +1,325 @@
+{
+  "meeting_date": "2026-10-01",
+  "notes": "Hand-labeled expected follow-ups for the fictional sample transcripts. An extracted item matches a golden item when the owner is the same and the title contains every keyword (case-insensitive). Destination and due date are then scored on matched pairs. Samples marked split=dev were used while writing the rules engine; split=heldout samples were written afterwards and never used for tuning, so they are the honest generalization check.",
+  "samples": {
+    "northfield-pilot-scoping": {
+      "action_items": [
+        {
+          "owner": "Sam Rivera",
+          "keywords": [
+            "proposal",
+            "pricing"
+          ],
+          "destination": "attio",
+          "due": "2026-10-02"
+        },
+        {
+          "owner": "Priya Natarajan",
+          "keywords": [
+            "security questionnaire"
+          ],
+          "destination": "attio",
+          "due": "2026-10-08"
+        },
+        {
+          "owner": "Dev Patel",
+          "keywords": [
+            "data-flow diagram"
+          ],
+          "destination": "linear",
+          "due": "2026-10-14"
+        },
+        {
+          "owner": "Javier Monestel",
+          "keywords": [
+            "it security"
+          ],
+          "destination": "calendar",
+          "due": "2026-10-08"
+        },
+        {
+          "owner": "Priya Natarajan",
+          "keywords": [
+            "inclusion criteria"
+          ],
+          "destination": "attio",
+          "due": null
+        },
+        {
+          "owner": "Javier Monestel",
+          "keywords": [
+            "playbook"
+          ],
+          "destination": "notion",
+          "due": null
+        }
+      ],
+      "decisions": [
+        [
+          "six-month pilot",
+          "two"
+        ]
+      ],
+      "open_questions": [
+        [
+          "dialysis"
+        ]
+      ],
+      "split": "dev"
+    },
+    "summit-team-plan": {
+      "action_items": [
+        {
+          "owner": "Dev Patel",
+          "keywords": [
+            "coach dashboard"
+          ],
+          "destination": "linear",
+          "due": null
+        },
+        {
+          "owner": "Javier Monestel",
+          "keywords": [
+            "compatibility list"
+          ],
+          "destination": "attio",
+          "due": "2026-10-01"
+        },
+        {
+          "owner": "Marcus Hale",
+          "keywords": [
+            "team-plan proposal"
+          ],
+          "destination": "attio",
+          "due": "2026-10-07"
+        },
+        {
+          "owner": "Javier Monestel",
+          "keywords": [
+            "onboarding session"
+          ],
+          "destination": "calendar",
+          "due": null
+        }
+      ],
+      "decisions": [
+        [
+          "twenty percent",
+          "coach seats"
+        ]
+      ],
+      "open_questions": [],
+      "split": "dev"
+    },
+    "leadership-sync": {
+      "action_items": [
+        {
+          "owner": "Dev Patel",
+          "keywords": [
+            "export workaround"
+          ],
+          "destination": "linear",
+          "due": "2026-10-08"
+        },
+        {
+          "owner": "Marcus Hale",
+          "keywords": [
+            "help-center article"
+          ],
+          "destination": "notion",
+          "due": null
+        },
+        {
+          "owner": "Priya Natarajan",
+          "keywords": [
+            "cedar valley"
+          ],
+          "destination": "attio",
+          "due": "2026-10-02"
+        },
+        {
+          "owner": "Marcus Hale",
+          "keywords": [
+            "a/b test"
+          ],
+          "destination": "linear",
+          "due": "2026-10-08"
+        },
+        {
+          "owner": "Javier Monestel",
+          "keywords": [
+            "hiring page"
+          ],
+          "destination": "notion",
+          "due": "2026-10-05"
+        },
+        {
+          "owner": "Marcus Hale",
+          "keywords": [
+            "partnerships lead"
+          ],
+          "destination": "attio",
+          "due": "2026-10-02"
+        },
+        {
+          "owner": "Javier Monestel",
+          "keywords": [
+            "okr review"
+          ],
+          "destination": "calendar",
+          "due": "2026-10-08"
+        }
+      ],
+      "decisions": [
+        [
+          "second ml engineer"
+        ],
+        [
+          "marcus",
+          "oem"
+        ]
+      ],
+      "open_questions": [],
+      "split": "dev"
+    },
+    "investor-checkin": {
+      "action_items": [
+        {
+          "owner": "Nora Lindqvist",
+          "keywords": [
+            "intro",
+            "kim"
+          ],
+          "destination": "attio",
+          "due": "2026-10-02"
+        },
+        {
+          "owner": "Javier Monestel",
+          "keywords": [
+            "intro",
+            "kim"
+          ],
+          "destination": "attio",
+          "due": null
+        },
+        {
+          "owner": "Sam Rivera",
+          "keywords": [
+            "metrics deck"
+          ],
+          "destination": "attio",
+          "due": "2026-10-09"
+        },
+        {
+          "owner": "Javier Monestel",
+          "keywords": [
+            "retention chart"
+          ],
+          "destination": "notion",
+          "due": "2026-10-06"
+        }
+      ],
+      "decisions": [],
+      "open_questions": [
+        [
+          "conference"
+        ]
+      ],
+      "split": "dev"
+    },
+    "heldout-cedar-valley-site": {
+      "split": "heldout",
+      "action_items": [
+        {
+          "owner": "Priya Natarajan",
+          "keywords": [
+            "data retention statement"
+          ],
+          "destination": "attio",
+          "due": "2026-10-06"
+        },
+        {
+          "owner": "Javier Monestel",
+          "keywords": [
+            "counsel"
+          ],
+          "destination": "calendar",
+          "due": "2026-10-01"
+        },
+        {
+          "owner": "Grace Okafor",
+          "keywords": [
+            "wording"
+          ],
+          "destination": "attio",
+          "due": null
+        },
+        {
+          "owner": "Javier Monestel",
+          "keywords": [
+            "log"
+          ],
+          "destination": "attio",
+          "due": null
+        }
+      ],
+      "decisions": [],
+      "open_questions": [
+        [
+          "countersign"
+        ]
+      ]
+    },
+    "heldout-growth-standup": {
+      "split": "heldout",
+      "action_items": [
+        {
+          "owner": "Dev Patel",
+          "keywords": [
+            "affected accounts"
+          ],
+          "destination": "linear",
+          "due": "2026-10-02"
+        },
+        {
+          "owner": "Marcus Hale",
+          "keywords": [
+            "apology email"
+          ],
+          "destination": "linear",
+          "due": "2026-10-02"
+        },
+        {
+          "owner": "Dev Patel",
+          "keywords": [
+            "free-month credit"
+          ],
+          "destination": "linear",
+          "due": null
+        },
+        {
+          "owner": "Dev Patel",
+          "keywords": [
+            "invite job"
+          ],
+          "destination": "linear",
+          "due": "2026-10-05"
+        },
+        {
+          "owner": "Javier Monestel",
+          "keywords": [
+            "invite rate"
+          ],
+          "destination": "notion",
+          "due": null
+        }
+      ],
+      "decisions": [
+        [
+          "five hundred"
+        ]
+      ],
+      "open_questions": []
+    }
+  }
+}

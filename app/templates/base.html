@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Meeting Action Router{% endblock %}</title>
+  <meta name="description" content="Turn meeting transcripts into owned, dated follow-ups routed to Linear, Attio, Notion and Calendar.">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/app.css">
+  <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+</head>
+<body>
+  <div class="banner">Demo with fictional meetings · independent portfolio project, not affiliated with any company.</div>
+  <header class="nav">
+    <a href="/" class="brand">
+      <img src="/static/logo.svg" alt="" width="30" height="30">
+      <span><strong>Founder OS</strong><small>Meeting Action Router</small></span>
+    </a>
+    <nav>
+      <a href="/">Analyze</a>
+      <a href="/evals">Evals</a>
+      <a href="/docs">API</a>
+      <a href="{{ repo_url }}" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+  </header>
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="footer">Built by Javier Monestel · FastAPI · HTMX · Claude API · All people and organizations in the demo are fictional.</footer>
+</body>
+</html>

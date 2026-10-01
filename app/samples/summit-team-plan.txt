@@ -1,0 +1,23 @@
+Title: Summit Endurance Club – Team plan
+Date: {{DATE}}
+Participants: Marcus Hale (Performance Lead), Javier Monestel (Executive Assistant), Elena Ruiz (Head Coach, Summit Endurance Club)
+
+[00:00:03] Marcus Hale: Elena, thanks for jumping on. You mentioned around sixty athletes for the spring block?
+[00:00:15] Elena Ruiz: Sixty-two. Mostly marathon and triathlon. Cramping in the last third of long sessions is our biggest issue.
+[00:00:44] Marcus Hale: That is exactly where in-session hydration alerts help. Athletes get a nudge before the electrolyte drop turns into a cramp.
+[00:01:20] Elena Ruiz: I like it, but as a coach I need to see the whole squad at once, not sixty-two separate phones.
+[00:01:42] Marcus Hale: Understood. A coach dashboard is on our roadmap. I'll ask Dev to scope a squad-level coach dashboard and Javier will file it in Linear.
+[00:02:05] Javier Monestel: On it.
+[00:02:30] Elena Ruiz: Which straps are supported? Half my team is on the older chest strap.
+[00:02:48] Marcus Hale: Javier, can you send Elena the device compatibility list today?
+[00:02:55] Javier Monestel: Will do.
+[00:03:20] Elena Ruiz: And pricing? Sixty-two memberships adds up.
+[00:03:41] Marcus Hale: For annual team plans we can do twenty percent off, and coach seats are free.
+[00:03:58] Elena Ruiz: That works for the club board, I think.
+[00:04:10] Marcus Hale: Then we agreed on twenty percent off annual team plans with free coach seats. I'll send the team-plan proposal by Wednesday.
+[00:04:35] Elena Ruiz: When could the athletes start?
+[00:04:49] Marcus Hale: Let's book an onboarding session for the squad two weeks from now.
+[00:05:02] Javier Monestel: I'll book the onboarding session and send calendar invites to Elena and the assistant coaches.
+[00:05:30] Elena Ruiz: Last thing, can we get a case study out of this if it works?
+[00:05:44] Marcus Hale: Absolutely, we would love that. Let's revisit after the first month of data.
+[00:06:00] Elena Ruiz: Sounds good. Thanks both.

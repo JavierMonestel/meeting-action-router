@@ -1,0 +1,24 @@
+Title: Northfield Health – Pilot scoping call
+Date: {{DATE}}
+Participants: Sam Rivera (Founder & CEO), Priya Natarajan (Clinical Lead), Javier Monestel (Executive Assistant), Dr. Alan Brooks (CMIO, Northfield Health)
+
+[00:00:04] Sam Rivera: Thanks for making the time, Alan. Goal for today is to agree on the shape of a pilot so you can take it to your innovation committee.
+[00:00:19] Dr. Alan Brooks: Happy to. The committee meets on the 14th, so whatever we bring needs to be tight.
+[00:01:02] Priya Natarajan: Quick recap on our side: the model reads potassium and sodium trends from the ECGs your cardiology clinics already capture. No new hardware for patients.
+[00:01:40] Dr. Alan Brooks: That is the appeal. My concern is workflow. Who sees the alert, and what are they supposed to do with it?
+[00:02:15] Priya Natarajan: In the pilot, alerts go to a nurse coordinator queue, not straight to physicians. We would co-design the escalation protocol with your team.
+[00:03:01] Dr. Alan Brooks: Good. I would want to start with two clinics, not the whole network.
+[00:03:20] Sam Rivera: That works for us. Let's go with a six-month pilot at two cardiology clinics, with a readout at month three.
+[00:03:41] Dr. Alan Brooks: Agreed. On pricing, procurement will ask whether this is a flat fee or per patient.
+[00:04:05] Sam Rivera: We have both options modeled. I'll send over the pilot proposal with both pricing options by Friday.
+[00:04:30] Dr. Alan Brooks: Perfect. Can you also send the security questionnaire and a data-flow diagram before the committee meets?
+[00:04:48] Priya Natarajan: Yes, I'll own the security questionnaire and have it back to you within a week.
+[00:05:02] Javier Monestel: I'll get Dev to produce the data-flow diagram and track it in Linear so it lands before the 14th.
+[00:05:30] Dr. Alan Brooks: Our IT security team will want a call of their own.
+[00:05:41] Javier Monestel: I'll schedule a call with your IT security team for next week and send the invite today.
+[00:06:10] Dr. Alan Brooks: One open question I still have: does the model need recalibration for patients on dialysis?
+[00:06:32] Priya Natarajan: Honest answer is we exclude dialysis patients in the pilot. I can share the inclusion criteria.
+[00:06:51] Dr. Alan Brooks: Please do, that will come up.
+[00:07:05] Javier Monestel: I'll update the pilot playbook page in Notion with Northfield's requirements and the inclusion criteria.
+[00:07:30] Sam Rivera: Great. Alan, anything else you need from us before the 14th?
+[00:07:44] Dr. Alan Brooks: No, that covers it. Talk soon.

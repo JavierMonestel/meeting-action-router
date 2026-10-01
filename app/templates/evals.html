@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Evals · Meeting Action Router{% endblock %}
+{% block content %}
+<section class="hero">
+  <h1>Evals: how good is the extraction?</h1>
+  <p class="lead">Every sample meeting has hand-labeled expected follow-ups. An extracted item counts as correct when the owner matches and the title contains the key phrase. Destination and due date are then checked on the matched items. The <b>held-out</b> meetings were written <i>after</i> the rules engine and were never used to tune it, so they are the honest number.</p>
+</section>
+
+{% for split, label, note in [('dev', 'Dev set', 'Used while writing the rules: expect this to look perfect.'), ('heldout', 'Held-out set', 'Never used for tuning: this is the real generalization signal.')] %}
+{% set r = report.split(split) %}
+<section class="card">
+  <div class="card-head">
+    <h2>{{ label }} · {{ report.engine }} engine</h2>
+    <span class="muted small">{{ note }}</span>
+  </div>
+  <div class="stats stats-tight">
+    <div class="stat"><b>{{ '%.2f' % r.precision }}</b><span>precision</span></div>
+    <div class="stat"><b>{{ '%.2f' % r.recall }}</b><span>recall</span></div>
+    <div class="stat"><b>{{ '%.2f' % r.f1 }}</b><span>F1</span></div>
+    <div class="stat"><b>{{ '%.2f' % r.destination_accuracy }}</b><span>routing accuracy</span></div>
+    <div class="stat"><b>{{ '%.2f' % r.due_accuracy }}</b><span>due-date accuracy</span></div>
+  </div>
+  <table class="table">
+    <thead><tr><th>Meeting</th><th>Expected</th><th>Predicted</th><th>Matched</th><th>Misses / extras</th></tr></thead>
+    <tbody>
+    {% for s in r.samples %}
+      <tr>
+        <td><a href="/?sample={{ s.slug }}">{{ s.slug }}</a></td>
+        <td>{{ s.expected }}</td><td>{{ s.predicted }}</td><td>{{ s.matched }}</td>
+        <td class="small">
+          {% for m in s.misses %}<div class="miss">missed · {{ m }}</div>{% endfor %}
+          {% for e in s.extras %}<div class="extra">extra · {{ e }}</div>{% endfor %}
+          {% if not s.misses and not s.extras %}<span class="muted">—</span>{% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endfor %}
+
+<section class="card">
+  <h2>Reading these numbers</h2>
+  <p>The rules engine is close to perfect on the meetings it was built against and drops to about half on new phrasing ("Action item for me: …", "Let me log …", third-person commitments). That gap is exactly why the production path is Claude with a typed schema, with the rules engine kept as a zero-cost fallback. To score Claude on the same sets:</p>
+  <pre>ANTHROPIC_API_KEY=... python -m evals.run --engine claude</pre>
+</section>
+{% endblock %}

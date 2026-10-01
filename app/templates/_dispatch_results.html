@@ -1,0 +1,15 @@
+<section class="card results">
+  <h2>Dispatch results</h2>
+  {% if not results %}<p class="muted">Nothing was approved.</p>{% endif %}
+  <ul class="result-list">
+    {% for r in results %}
+      <li class="result result-{{ r.status }}">
+        <span class="dest dest-{{ r.destination }}">{{ destination_label[r.destination] }}</span>
+        <div>
+          <div class="item-title">{{ r.title }}</div>
+          <div class="muted small">{{ r.status | replace('_', ' ') }} · {{ r.detail }}{% if r.link %} · <a href="{{ r.link }}" target="_blank" rel="noopener">open ↗</a>{% endif %}</div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

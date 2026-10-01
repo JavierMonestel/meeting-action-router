@@ -1,0 +1,24 @@
+Title: Weekly leadership sync
+Date: {{DATE}}
+Participants: Sam Rivera (Founder & CEO), Dev Patel (CTO), Priya Natarajan (Clinical Lead), Marcus Hale (Performance Lead), Javier Monestel (Executive Assistant)
+
+[00:00:02] Sam Rivera: Let's start with blockers, then decisions. Dev, firmware?
+[00:00:10] Dev Patel: The strap firmware update still breaks raw ECG export on one model. About nine percent of active athletes lost hydration alerts.
+[00:00:31] Dev Patel: I'll ship the export workaround by Thursday and post a status note for support.
+[00:00:52] Marcus Hale: Support is getting tickets, so a customer-facing note matters. I'll draft the help-center article once the fix is out.
+[00:01:20] Sam Rivera: Priya, clinical side?
+[00:01:26] Priya Natarajan: The IRB amendment at the Cedar Valley site is still pending. It delays about four hundred patients in the validation cohort.
+[00:01:48] Priya Natarajan: I'll chase the Cedar Valley site coordinator tomorrow and escalate to their research director if there's no answer by Friday.
+[00:02:15] Sam Rivera: Marcus, growth?
+[00:02:20] Marcus Hale: Waitlist-to-trial conversion dipped to thirteen percent. I'll run an onboarding email A/B test next week.
+[00:02:45] Sam Rivera: Okay. Two decisions today. First, the second ML engineer.
+[00:02:58] Dev Patel: Validation work and strap support both need me. I can't do both well.
+[00:03:15] Sam Rivera: Decision: we are opening the second ML engineer role now rather than waiting for the seed extension.
+[00:03:30] Sam Rivera: Javier, can you set up the hiring page and the interview loop in Notion by Monday?
+[00:03:38] Javier Monestel: Yes, I'll have the Notion hiring page and interview loop ready by Monday.
+[00:04:05] Sam Rivera: Second, the strap OEM conversation has had no owner for two weeks.
+[00:04:18] Sam Rivera: Decision: going forward Marcus owns the strap OEM relationship.
+[00:04:30] Marcus Hale: Fine by me. I'll reach out to their partnerships lead this week.
+[00:04:52] Sam Rivera: Javier, anything from your side?
+[00:04:58] Javier Monestel: Quarterly OKR reviews are due. I'll book the OKR review with Priya and Marcus for next week and send the pre-read on Friday.
+[00:05:25] Sam Rivera: Great. Anything else? No? Thanks everyone.

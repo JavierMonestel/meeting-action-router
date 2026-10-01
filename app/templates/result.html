@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% block title %}{{ result.transcript.title }} · Meeting Action Router{% endblock %}
+{% block content %}
+{% set t = result.transcript %}
+{% set a = result.analysis %}
+<div class="row-between page-head">
+  <div>
+    <a href="/" class="muted small">← New transcript</a>
+    <h1>{{ t.title }}</h1>
+    <div class="meta">
+      <span>{{ t.meeting_date.strftime('%A, %B ') ~ t.meeting_date.day ~ t.meeting_date.strftime(', %Y') }}</span>
+      <span>·</span>
+      {% for p in t.participants %}
+        <span class="person {{ 'person-ext' if p.is_external else '' }}" title="{{ p.role or '' }}{{ ', ' ~ p.organization if p.organization else '' }}">{{ p.name }}{% if p.is_external %} <em>{{ p.organization }}</em>{% endif %}</span>
+      {% endfor %}
+    </div>
+  </div>
+  <span class="badge {{ 'badge-green' if result.engine == 'claude' else 'badge-amber' }}">Extracted by {{ 'Claude' if result.engine == 'claude' else 'rules engine (demo mode)' }}</span>
+</div>
+
+<div class="stats">
+  <div class="stat"><b>{{ a.action_items | length }}</b><span>follow-ups</span></div>
+  <div class="stat"><b>{{ a.decisions | length }}</b><span>decisions</span></div>
+  <div class="stat"><b>{{ a.open_questions | length }}</b><span>open questions</span></div>
+  <div class="stat"><b>{{ a.action_items | selectattr('owner_is_external') | list | length }}</b><span>waiting on others</span></div>
+</div>
+
+<form id="ics-form" method="post" action="/ics" hidden>
+  <input type="hidden" name="items_json" value="{{ items_json }}">
+  <input type="hidden" name="meeting_title" value="{{ t.title }}">
+</form>
+
+<div class="grid-2-1">
+  <form id="dispatch-form" class="stack" hx-post="/dispatch" hx-target="#dispatch-results" hx-swap="innerHTML">
+    <input type="hidden" name="items_json" value="{{ items_json }}">
+    <input type="hidden" name="meeting_title" value="{{ t.title }}">
+
+    {% for dest, rows in by_dest.items() if rows %}
+    <section class="card">
+      <div class="card-head">
+        <h2><span class="dest dest-{{ dest }}">{{ destination_label[dest] }}</span> {{ rows | length }} item{{ 's' if rows | length != 1 }}</h2>
+        <span class="muted small">{{ 'live' if rows[0].live else 'dry-run' }}</span>
+      </div>
+      <ul class="items">
+        {% for p in rows %}{% set i = p.item %}
+        <li class="item">
+          <label class="check"><input type="checkbox" name="approved" value="{{ p.idx }}" checked aria-label="Approve {{ i.title }}"><span></span></label>
+          <div class="item-body">
+            <div class="item-title">{{ i.title }}</div>
+            <div class="item-meta">
+              <span class="prio prio-{{ i.priority }}">{{ i.priority }}</span>
+              <span class="owner {{ 'owner-ext' if i.owner_is_external else '' }}">{{ i.owner }}{% if i.owner_is_external %} · external{% endif %}</span>
+              <span>{{ ('due ' ~ i.due_date.isoformat()) if i.due_date else 'no due date' }}</span>
+              {% if i.linked_org %}<span class="muted">↔ {{ i.linked_org }}</span>{% endif %}
+            </div>
+            <blockquote class="evidence"><span class="ts">{{ i.evidence.timestamp }}</span> “{{ i.evidence.quote }}”</blockquote>
+            <details class="request">
+              <summary>{{ 'Calendar invite (.ics)' if dest == 'calendar' else 'API request · ' ~ p.request.method ~ ' ' ~ p.request.url }}</summary>
+              {% if dest != 'calendar' %}<div class="req-headers">{% for k, v in p.request.headers.items() %}<code>{{ k }}: {{ v }}</code>{% endfor %}</div>{% endif %}
+              <pre>{{ p.request_body }}</pre>
+              {% if dest == 'calendar' %}
+                <button class="btn btn-small" type="submit" form="ics-form" name="ics_index" value="{{ p.idx }}">Download .ics</button>
+              {% endif %}
+            </details>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endfor %}
+
+    {% if not a.action_items %}<div class="card muted">No commitments were found in this transcript.</div>{% endif %}
+
+    <div class="sendbar">
+      <div>
+        <b>Review complete?</b>
+        <span class="muted small">Uncheck anything you don't want created, then send.</span>
+      </div>
+      <button class="btn btn-primary" type="submit">Send approved items</button>
+    </div>
+    <div id="dispatch-results" aria-live="polite"></div>
+  </form>
+
+  <aside class="stack">
+    <section class="card">
+      <h2>Summary</h2>
+      <p>{{ a.summary }}</p>
+      {% if a.key_points %}<ul class="bullets">{% for k in a.key_points %}<li>{{ k }}</li>{% endfor %}</ul>{% endif %}
+    </section>
+    <section class="card">
+      <h2>Decisions</h2>
+      {% for d in a.decisions %}
+        <div class="decision"><span class="ts">{{ d.evidence.timestamp }}</span> {{ d.text }}</div>
+      {% else %}<p class="muted">No decisions recorded.</p>{% endfor %}
+    </section>
+    <section class="card">
+      <h2>Open questions</h2>
+      {% for q in a.open_questions %}<div class="question">? {{ q }}</div>{% else %}<p class="muted">None left open.</p>{% endfor %}
+    </section>
+    {% if a.follow_up_email %}
+    <section class="card">
+      <div class="card-head">
+        <h2>Follow-up email draft</h2>
+        <button class="btn btn-small" type="button" onclick="navigator.clipboard.writeText(document.getElementById('email-body').innerText).then(() => { this.textContent = 'Copied ✓' })">Copy</button>
+      </div>
+      <div class="muted small">To: {{ a.follow_up_email.to | join(', ') }}<br>Subject: {{ a.follow_up_email.subject }}</div>
+      <pre id="email-body" class="email">{{ a.follow_up_email.body }}</pre>
+    </section>
+    {% endif %}
+  </aside>
+</div>
+{% endblock %}
